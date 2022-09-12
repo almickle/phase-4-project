@@ -1,8 +1,29 @@
 {
-	"text-blue-600": {
+	"mt-16": {
+		"style": {
+			"marginTop": 64
+		}
+	},
+	"ml-auto": {
+		"style": {
+			"marginLeft": "auto"
+		}
+	},
+	"text-center": {
+		"style": {
+			"textAlign": "center"
+		}
+	},
+	"text-xl": {
+		"style": {
+			"fontSize": 20,
+			"lineHeight": 28
+		}
+	},
+	"text-green-600": {
 		"style": {
 			"--tw-text-opacity": 1,
-			"color": "rgb(37 99 235 / var(--tw-text-opacity))"
+			"color": "rgb(22 163 74 / var(--tw-text-opacity))"
 		}
 	}
 }

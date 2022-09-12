@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
     private
 
     def render_not_found_response(object)
-        render json: {error: "#{object.model} not found"}, status: :not_found
+        render json: { error: "#{object.model} not found" }, status: :not_found
     end
 
     def render_unprocessable_entity_response(object)

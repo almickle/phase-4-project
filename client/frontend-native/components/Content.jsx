@@ -3,9 +3,10 @@ import {useTailwind} from 'tailwind-rn';
 
 export default function Content() {
   const tailwind = useTailwind();
+  
     return (
       <View>
-          <Text style={tailwind('text-blue-600')}>Hello world</Text>
+          <Text style={tailwind('text-green-600 text-xl mt-16 ml-auto text-center')}>Hello world</Text>
       </View>
     );
   }
