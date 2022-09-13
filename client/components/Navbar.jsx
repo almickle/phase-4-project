@@ -17,7 +17,8 @@ export default function Navbar() {
 
   const styles = StyleSheet.create({
       textStyle: {
-        fontSize: 18,
+        fontSize: 20,
+        marginTop: 10,
         margin: 4,
       }
   })

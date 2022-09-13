@@ -6,7 +6,8 @@ export default function Login( {size} ) {
             style={{
                 height: size,
                 width: undefined,
-                aspectRatio: 184 / 192
+                aspectRatio: 184 / 192,
+                marginLeft: 20,
             }}/>
     );
   }

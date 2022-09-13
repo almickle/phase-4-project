@@ -6,7 +6,8 @@ export default function Weather( { size }) {
              style={{
                 height: size,
                 width: undefined,
-                aspectRatio: 1
+                aspectRatio: 1,
+                marginRight: 20,
       }}/>
     );
   }
