@@ -1,26 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Den Boiz Times, where breaking news lives!
 
-Things you may want to cover:
+#### As a user, I can:
 
-* Ruby version
+* Log in to my account
 
-* System dependencies
+![image](https://user-images.githubusercontent.com/104162756/189770926-79aacfa6-0c19-4dbd-8a63-b18468f1990b.png)
 
-* Configuration
+* Access location and time-based news (articles published in Puerto Rico, South Carolina, Pretoria, etc.)
+* Navigate the website via the search bar
+* Select articles based on categories
+* Sort articles by date and popularity
 
-* Database creation
+ #### Stretch Goals 
+* Paywall will generate after a visitor has viewed 3 pages (store cookies and authenticate visitors/users)
+* Authorization: authorized users can access all posts on Den Boiz Times
+* Page layout: toggle between a list and grid style view.
 
-* Database initialization
 
-* How to run the test suite
+#### Styling
+* Implementing Tailwind
+* Black and white color scheme
+* Categories will be displayed as widgets.
+* Able to switch layout between list and grid (stretch deliverable, TBD)
 
-* Services (job queues, cache servers, search engines, etc.)
+![image](https://user-images.githubusercontent.com/104162756/189770466-d8d9af3a-46c6-44ab-a64c-15173d1f841c.png)
 
-* Deployment instructions
 
-* ...
-
-...
