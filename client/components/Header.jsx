@@ -3,18 +3,22 @@ import Navbar from "./Navbar";
 import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
+import Form from "./Form";
+import React, { useState } from "react";
 
 export default function Header() {
+  const [modalVisible, setModalVisible] = useState(false);
   const headerSize = 40
     return (
       <View>
+        <Form modalVisible={modalVisible} setModalVisible={setModalVisible} />
           <View style={{
                           justifyContent: 'center',
                           display: 'flex',
                           flexDirection: 'row',
                           marginTop: 60,
                       }}>
-          <Weather size={headerSize} />
+          <Weather size={headerSize} onPress={() => setModalVisible(modalVisible)} />
           <Image style={{
                           height: headerSize,
                           width: undefined,
