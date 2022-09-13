@@ -2,7 +2,7 @@ import { ScrollView, Text, StyleSheet } from 'react-native';
 
 export default function Navbar() {
     return (
-      <ScrollView horizontal={true} style={{ margin: 4 }}>
+      <ScrollView horizontal={ true } style={{ margin: 4 }}>
         <Text style={ styles.textStyle }>Politics</Text>
         <Text style={ styles.textStyle }>Finance</Text>
         <Text style={ styles.textStyle }>Business</Text>
