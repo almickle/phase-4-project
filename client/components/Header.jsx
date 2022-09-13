@@ -7,7 +7,9 @@ import Weather from "./widgets/Weather.jsx"
 export default function Header() {
   const headerSize = 40
     return (
-      <View>
+      <View style={{
+                      alignItems: 'center',
+                    }}>
           <View style={{
                           justifyContent: 'center',
                           display: 'flex',
