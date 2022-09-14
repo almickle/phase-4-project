@@ -8,33 +8,48 @@ export default function Navbar() {
       setTextColor("red")
   }
     return (
-      <span style={{ margin: 4 }}>
-        <h1 onPress={changeColor}>Politics</h1>
-        <h1>Finance</h1>
-        <h1>Business</h1>
-        <h1>Technology</h1>
-        <h1>Sports</h1>
-        <h1>Travel</h1>
-        <h1>Art</h1>
-        <h1>Health</h1>
+      <span style={{ 
+        margin: 4,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+         }}>
+        <h1 onClick={changeColor}>Politics</h1>
+        <h1 style={{ 
+        marginLeft: 10,
+        marginRight: 10,
+
+         }}>Finance</h1>
+        <h1 style={{ 
+        marginLeft: 10,
+        marginRight: 10,
+
+         }}>Business</h1>
+        <h1 style={{ 
+        marginLeft: 10,
+        marginRight: 10,
+
+         }}>Technology</h1>
+        <h1 style={{ 
+        marginLeft: 10,
+        marginRight: 10,
+
+         }}>Sports</h1>
+        <h1 style={{ 
+        marginLeft: 10,
+        marginRight: 10,
+
+         }}>Travel</h1>
+        <h1 style={{ 
+        marginLeft: 10,
+        marginRight: 10,
+
+         }}>Art</h1>
+        <h1 style={{ 
+        marginLeft: 10,
+        marginRight: 10,
+
+         }}>Health</h1>
       </span>
     );
   }
-
-  // const styles = StyleSheet.create({
-  //     h1Style: {
-  //       color: "black",
-  //       fontSize: 20,
-  //       marginTop: 10,
-  //       margin: 4,
-  //     }
-  // })
-
-//   style={ styles.h1Style }
-// style={ styles.h1Style }
-// style={ styles.h1Style }
-// style={ styles.h1Style }
-// style={ styles.h1Style }
-// style={ styles.h1Style }
-// style={ styles.h1Style }
-// style={ styles.h1Style }
