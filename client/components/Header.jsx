@@ -31,7 +31,6 @@ export default function Header() {
                           marginTop: 60,
                       }}>
           <Weather size={headerSize} onPress={() => setModalVisible(modalVisible)} />
-          <Weather size={ headerSize } />
           <Image style={{
                           height: headerSize,
                           width: undefined,

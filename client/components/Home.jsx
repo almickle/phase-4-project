@@ -6,7 +6,7 @@ import axios from 'axios'
 
 export default function Home() {
   
-  const url = "http://localhost:3000/articles";
+  const url = "https://localhost:3000/articles";
   axios.get(url, {
     timeout: 400000, // default is `0` (no timeout)
   })
