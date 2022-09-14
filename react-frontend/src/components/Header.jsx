@@ -35,7 +35,7 @@ export default function Header() {
           </div>
           <div style={{height: 2, backgroundColor: "black", width: '80%',}}></div>
         <Navbar />
-        {/* <Markets /> */}
+        <Markets />
       </div>
     );
   }
