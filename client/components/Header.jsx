@@ -5,14 +5,13 @@ import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
 import Form from "./Form";
-import React, { useState } from "react";
 
 export default function Header() {
   // const headerSize = 40
   // const headerSize = 40
   const [modalVisible, setModalVisible] = useState(false)
 
-
+6
   const [headerSize, setHeaderSize] = useState(40)
 
 
@@ -42,7 +41,7 @@ export default function Header() {
           <Login size={headerSize} handleLogin={handleLogin}/>
           </View>
         <Navbar />
-        <Markets />
+        {/* <Markets /> */}
       </View>
     );
   }
