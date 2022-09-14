@@ -1,102 +1,88 @@
-// import { Formik } from 'formik';
-// import { Button, TextInput, View, StyleSheet } from 'react-native';
-// import React, { useState } from "react";
-// import { Alert, Modal, Text, Pressable } from "react-native";
+import React from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-// export default function Form({modalVisible, setModalVisible}) {
-//     return (
-//         <View style={styles.centeredView}>
-//         <Modal
-//           animationType="slide"
-//           transparent={true}
-//           visible={modalVisible}
-//           onRequestClose={() => {
-//             Alert.alert("Modal has been closed.");
-//             setModalVisible(!modalVisible);
-//           }}
-//         >
-//           <View style={styles.centeredView}>
-//             <View style={styles.modalView}>
-//             <Formik initialValues={{ email: '', password: '' }} onSubmit={values => console.log(values)}>
-//                 {({ handleChange, handleBlur, handleSubmit, values }) => (
-//                     <View>
-//                        <Text> Enter Email </Text> 
-//                         <TextInput
-//                         // style={textStyle.input}
-//                         onChangeText={handleChange('email')}
-//                         onBlur={handleBlur ('email')}
-//                         value={values.email}
-//                         />
-//                         <Text> Password </Text>
-//                         <TextInput
-//                         // style={textStyle.input}
-//                         onChangeText={handleChange('password')}
-//                         onBlur={handleBlur ('password')}
-//                         value={values.password}
-//                         />
-//                         {/* <Button onPress={handleSubmit} title="Submit" /> */}
-//                         <Pressable
-//                             style={[styles.button, styles.buttonClose]}
-//                             onPress={() => setModalVisible(!modalVisible)}
-//                         >
-//                             <Text style={styles.textStyle}>Submit</Text>
-//                         </Pressable>
-//                     </View> )}
-//                  </Formik>  
-//             </View>
-//           </View>
-//         </Modal>
-//         <Pressable
-//           style={[styles.button, styles.buttonOpen]}
-//           onPress={() => setModalVisible(true)}
-//         >
-//           <Text style={styles.textStyle}>Show Modal</Text>
-//         </Pressable>
-//       </View>
-//     );
-//   }
 
-//   const styles = StyleSheet.create({
-//     centeredView: {
-//       flex: 1,
-//       justifyContent: "center",
-//       alignItems: "center",
-//       marginTop: 22
-//     },
-//     modalView: {
-//       margin: 20,
-//       backgroundColor: "white",
-//       borderRadius: 20,
-//       padding: 35,
-//       alignItems: "center",
-//       shadowColor: "#000",
-//       shadowOffset: {
-//         width: 0,
-//         height: 2
-//       },
-//       shadowOpacity: 0.25,
-//       shadowRadius: 4,
-//       elevation: 5
-//     },
-//     button: {
-//       borderRadius: 20,
-//       padding: 10,
-//       elevation: 2
-//     },
-//     buttonOpen: {
-//       backgroundColor: "#F194FF",
-//     },
-//     buttonClose: {
-//       backgroundColor: "#2196F3",
-//     },
-//     textStyle: {
-//       color: "white",
-//       fontWeight: "bold",
-//       textAlign: "center"
-//     },
-//     modalText: {
-//       marginBottom: 15,
-//       textAlign: "center"
-//     }
-//   });
- 
+function SignUpForm({}) {
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const signUp = (e) => {
+    e.preventDefault();
+    // if (password.length < 6) {
+    //   alert("Password must be at least 6 characters")
+    //   return
+    // }
+    // if (email.indexOf("@") === -1) {
+    //   alert("Your email is not correct")
+    //   return
+    // }
+    // if (email.indexOf(".com") === -1) {
+    //   alert("Your email is not correct")
+    //   return
+    // }
+
+
+    fetch("http://localhost:3000/users", {
+          method: "POST",
+          body: JSON.stringify({
+            username: username,
+            email: email,
+            password: password
+          }),
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          },
+        })
+  };
+
+  return (
+    <Modal centered show={show} onHide={handleClose} className="mt-3">
+      <Modal.Header closeButton>
+        <Modal.Title><b>Signup</b></Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput">
+            <Form.Label><b>Username</b></Form.Label>
+            <Form.Control
+              onChange={(event) => setUsername(event.target.value)}
+              type="username"
+              autoFocus
+              autoComplete="off"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Label><b>Email address</b></Form.Label>
+            <Form.Control
+              onChange={(event) => setEmail(event.target.value)}
+              type="email"
+              autoComplete="off"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+            <Form.Label><b>Password</b></Form.Label>
+            <Form.Control
+              onChange={(event) => setPassword(event.target.value)}
+              type="password"
+              autoComplete="off"
+            />
+          </Form.Group>
+        </Form>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          <b>Close</b>
+        </Button>
+        <Button variant="primary" onClick={signUp} type="submit">
+          <b>Submit</b>
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+export default SignupForm;
