@@ -4,21 +4,25 @@ import Navbar from "./Navbar";
 import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
+import Form from "./Form";
 
 export default function Header() {
   // const headerSize = 40
+  const [modalVisible, setModalVisible] = useState(false)
+
 
   const [headerSize, setHeaderSize] = useState(40)
 
 
   function handleLogin() {
-      setHeaderSize(40)
+      setModalVisible(true)
   }
 
     return (
       <View style={{
                       alignItems: 'center',
                     }}>
+          <Form modalVisible={modalVisible} setModalVisible={setModalVisible} />
           <View style={{
                           justifyContent: 'center',
                           display: 'flex',
