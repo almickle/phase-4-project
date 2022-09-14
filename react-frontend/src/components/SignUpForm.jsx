@@ -2,12 +2,15 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { useState } from 'react';
+
 
 
 function SignUpForm({}) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    
 
     const signUp = (e) => {
     e.preventDefault();
@@ -40,7 +43,7 @@ function SignUpForm({}) {
   };
 
   return (
-    <Modal centered show={show} onHide={handleClose} className="mt-3">
+    <Modal centered  className="mt-3">
       <Modal.Header closeButton>
         <Modal.Title><b>Signup</b></Modal.Title>
       </Modal.Header>

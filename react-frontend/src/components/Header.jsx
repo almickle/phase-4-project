@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
-import Form from "./Form";
+import Form from "./SignUpForm";
 
 export default function Header() {
 
@@ -21,7 +21,7 @@ export default function Header() {
       <div style={{
                       alignItems: 'center',
                     }}>
-          {/* <Form modalVisible={modalVisible} setModalVisible={setModalVisible} /> */}
+          <Form modalVisible={modalVisible} setModalVisible={setModalVisible} />
           <div style={{
                           justifyContent: 'center',
                           display: 'flex',
