@@ -34,6 +34,8 @@ end
 
 #gemlock
 #x64-mingw-ucrt
+# x64-mingw-ucrt
+# x86_64-darwin-21
 
 #gemfile
 #mri mingw x64_mingw
