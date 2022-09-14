@@ -5,8 +5,10 @@ import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
 import Form from "./Form";
+import React, { useState } from "react";
 
 export default function Header() {
+  // const headerSize = 40
   // const headerSize = 40
   const [modalVisible, setModalVisible] = useState(false)
 
@@ -29,6 +31,7 @@ export default function Header() {
                           flexDirection: 'row',
                           marginTop: 60,
                       }}>
+          <Weather size={headerSize} onPress={() => setModalVisible(modalVisible)} />
           <Weather size={ headerSize } />
           <Image style={{
                           height: headerSize,

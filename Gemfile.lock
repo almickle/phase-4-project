@@ -161,14 +161,26 @@ GEM
 
 PLATFORMS
   ruby
+<<<<<<< HEAD
+  x64-mingw-ucrt
+=======
   x64-mingw32
   x64-unknown
+>>>>>>> ea8d9563410b845dac1a9dd83b22c6a5dad5414c
   x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   debug
+<<<<<<< HEAD
+<<<<<<< HEAD
+  pg (~> 1.4.3)
+=======
+  pg
+>>>>>>> ea8d9563410b845dac1a9dd83b22c6a5dad5414c
+=======
   pg (= 1.4.3)
+>>>>>>> 3ee6869872b6e4593ab0eb09a0323bc7e3a38ae9
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.3, >= 7.0.3.1)
