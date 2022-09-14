@@ -24,7 +24,7 @@ export default function Content() {
   })
   
     return (
-      <div>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           {articleElements}
       </div>
     );

@@ -1,6 +1,6 @@
 import login from "./assets/login.jpg"
 
-export default function Login( { size, handleLogin, marginTop } ) {
+export default function Login( { size, handleLogin, marginTop, marginLeft } ) {
   
     return (
         <img src={login}
@@ -8,7 +8,7 @@ export default function Login( { size, handleLogin, marginTop } ) {
                   height: size,
                   width: undefined,
                   aspectRatio: 184 / 192,
-                  marginLeft: 40,
+                  marginLeft: marginLeft,
                   marginTop: marginTop,
               }}
               onClick={handleLogin}/>
