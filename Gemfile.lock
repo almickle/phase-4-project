@@ -109,14 +109,7 @@ GEM
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.13.8-x64-mingw-ucrt)
-      racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.8-x86_64-linux)
-      racc (~> 1.4)
     pg (1.4.3)
-    pg (1.4.3-x64-mingw-ucrt)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -166,19 +159,28 @@ GEM
 
 PLATFORMS
   ruby
+<<<<<<< HEAD
   x64-mingw-ucrt
+=======
+  x64-mingw32
+  x64-unknown
+>>>>>>> ea8d9563410b845dac1a9dd83b22c6a5dad5414c
   x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   debug
+<<<<<<< HEAD
   pg (~> 1.4.3)
+=======
+  pg
+>>>>>>> ea8d9563410b845dac1a9dd83b22c6a5dad5414c
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 2.7.6p219
 
 BUNDLED WITH
-   2.3.21
+   2.3.22
