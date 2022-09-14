@@ -168,6 +168,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw-ucrt
   x86_64-darwin-21
   x86_64-linux
 
