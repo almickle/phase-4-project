@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def show
-        user=User.find_by(id: session[:user_id])
+        user=User.find(session[:user_id])
         render json: user
     end
 
@@ -10,10 +10,10 @@ class UsersController < ApplicationController
         render json: users, status: :ok
     end
     
-    def discover
-        user=find_user
-        render json: user, status: :ok
-    end
+    # def discover
+    #     user=find_user
+    #     render json: user, status: :ok
+    # end
 
     def create
         user=User.create!(user_params)
@@ -35,4 +35,6 @@ class UsersController < ApplicationController
     def find_user
         User.find(params[:id]) 
     end
+
+    
 end
