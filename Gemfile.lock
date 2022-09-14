@@ -112,11 +112,7 @@ GEM
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-<<<<<<< HEAD
     nokogiri (1.13.8-x64-mingw32)
-=======
-    nokogiri (1.13.8-x86_64-darwin)
->>>>>>> fabc1b38fc828d4c7e71be3f93f57c88a0dee782
       racc (~> 1.4)
     pg (1.4.3)
     pg (1.4.3-x64-mingw32)
@@ -124,8 +120,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
-    rack-cors (1.1.1)
-      rack (>= 2.0.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4)
@@ -181,7 +175,6 @@ DEPENDENCIES
   faker
   pg (= 1.4.3)
   puma (~> 5.0)
-  rack-cors
   rails (~> 7.0.3, >= 7.0.3.1)
   tzinfo-data
 
