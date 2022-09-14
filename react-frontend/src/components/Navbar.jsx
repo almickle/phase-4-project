@@ -9,7 +9,6 @@ export default function Navbar() {
   }
     return (
       <span style={{ 
-        margin: 4,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
