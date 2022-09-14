@@ -161,12 +161,7 @@ GEM
 
 PLATFORMS
   ruby
-<<<<<<< HEAD
   x64-mingw-ucrt
-=======
-  x64-mingw32
-  x64-unknown
->>>>>>> ea8d9563410b845dac1a9dd83b22c6a5dad5414c
   x86_64-darwin-21
   x86_64-linux
 
