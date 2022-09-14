@@ -150,6 +150,8 @@ GEM
     timeout (0.3.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2022.3)
+      tzinfo (>= 1.0.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -164,9 +166,10 @@ PLATFORMS
 
 DEPENDENCIES
   debug
-  pg
+  pg (= 1.4.3)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  tzinfo-data
 
 RUBY VERSION
    ruby 2.7.6p219
