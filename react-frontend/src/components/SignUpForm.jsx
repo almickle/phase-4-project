@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 
-export default function SignUpForm({ setModalVisible }) {
+export default function SignUpForm({ setModalVisible, modalVisible }) {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -47,7 +47,7 @@ export default function SignUpForm({ setModalVisible }) {
   };
 
   return (
-    <Modal centered  className="mt-3">
+    <Modal centered  className="mt-3" modalVisible={modalVisible}>
       <Modal.Header closeButton>
         <Modal.Title><b>Signup</b></Modal.Title>
       </Modal.Header>
