@@ -17,7 +17,7 @@ gem "pg", "~> 1.4.3"
 gem "puma", "~> 5.0"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ x86_64-linux ]
+gem "tzinfo-data", platforms: %i[ jruby ]
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
