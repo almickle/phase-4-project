@@ -32,8 +32,10 @@ group :development do
   # gem "spring"
 end
 
-
+#gemlock
 #x64-mingw-ucrt
+
+#gemfile
 #mri mingw x64_mingw
 #mingw mswin x64_mingw jruby
 
