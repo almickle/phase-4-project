@@ -17,14 +17,14 @@ gem "pg", "~> 1.4.3"
 gem "puma", "~> 5.0"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-# gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[ mingw mswin jruby ]
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ ruby ]
+  gem "debug", platforms: %i[ mri mingw ]
 end
 
 group :development do
@@ -34,5 +34,5 @@ end
 
 
 #x64-mingw-ucrt
-#mingw x64_mingw
-#mri
+#x64_mingw
+#x64_mingw
