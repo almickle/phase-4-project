@@ -1,23 +1,23 @@
 class UsersController < ApplicationController
 
     def show
-        user=User.find(session[:user_id])
-        render json: user
+        if current_user    
+            render json: current_user, status: :ok
+        else 
+            render json: {error: "No current session stored"}, status: :unauthorized
+        end
     end
 
     def index
         users=User.all
         render json: users, status: :ok
     end
-    
-    # def discover
-    #     user=find_user
-    #     render json: user, status: :ok
-    # end
+
 
     def create
         user=User.create!(user_params)
-        render json: user, status: :created
+        session[:user_id] = user.id
+        render json: user, status: :ok
     end
 
     def update

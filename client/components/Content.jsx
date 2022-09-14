@@ -14,7 +14,13 @@ export default function Content() {
 
   const articleElements = articles.map(article => {
     return (
-      <Article article={article}/>
+      <Article style={{
+                      justifyContent: 'center',
+                      display: 'flex',
+                      flexDirection: 'row',
+                      marginTop: 60,
+                     }}
+               article={article}/>
     )
   })
   

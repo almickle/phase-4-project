@@ -27,8 +27,7 @@ export default function Markets() {
       .then(resp => resp.json())
       .then(data => {
         console.log(data.data.symbol);
-        renderStocks.push(data.data.symbol)
-        // setStockInfo([stockInfo, data.data.symbol])
+        setStockInfo(...stockInfo, data)
     })
     })
 

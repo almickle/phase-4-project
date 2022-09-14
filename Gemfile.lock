@@ -66,6 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    bcrypt (3.1.18)
     builder (3.2.4)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
@@ -111,7 +112,11 @@ GEM
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+<<<<<<< HEAD
     nokogiri (1.13.8-x64-mingw32)
+=======
+    nokogiri (1.13.8-x86_64-darwin)
+>>>>>>> fabc1b38fc828d4c7e71be3f93f57c88a0dee782
       racc (~> 1.4)
     pg (1.4.3)
     pg (1.4.3-x64-mingw32)
@@ -171,6 +176,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   debug
   faker
   pg (= 1.4.3)
