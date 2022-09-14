@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def current_user
-        User.find(session[:user_id])
+        @current_user ||=User.find(session[:user_id]) #memoization
     end
 
     private
