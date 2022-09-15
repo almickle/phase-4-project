@@ -67,12 +67,6 @@ export default function Form({modalVisible, setModalVisible}) {
             </View>
           </View>
         </Modal>
-        {/* <Pressable
-          style={[styles.button, styles.buttonOpen]}
-          onPress={() => setModalVisible(true)}
-        >
-          <Text style={styles.textStyle}>Show Modal</Text>
-        </Pressable> */}
       </View>
     );
   }
