@@ -28,7 +28,7 @@ export default function Header() {
                           justifyContent: 'center',
                           display: 'flex',
                           flexDirection: 'row',
-                          marginTop: 60,
+                          marginTop: 10,
                       }}>
           <Weather size={headerSize} onPress={() => setModalVisible(modalVisible)} />
           <Image style={{
