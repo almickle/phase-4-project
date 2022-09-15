@@ -5,13 +5,25 @@ import { ScrollView, View, Text } from 'react-native';
 export default function Markets() {
 
   const stockArray = ['PINS', 'MSFT', 'META', 'GOOGL']
-  const renderStocks = []
-  const [stockInfo, setStockInfo] = useState([])
+  const [stockInfoMSFT, setStockInfoMSFT] = useState(["", 0, ""])
+  const [stockInfoPINS, setStockInfoPINS] = useState([])
+  const [stockInfoGOOGL, setStockInfoGOOGL] = useState([])
+
+  function processData(data) {
+    let color 
+
+    if ((data.data[0].Close - data.data[0].Open) >= 0) {
+        color = 'green'
+    } else {
+        color = 'red'
+    }
+    setStockInfoMSFT(['MSFT', (data.data[0].Close - data.data[0].Open).toFixed(2), color])
+  }
 
   useEffect(() => {
-    stockArray.forEach((element, index, array) => {
       const encodedParams = new URLSearchParams();
-            encodedParams.append("symbol", array[index]);
+            encodedParams.append("symbol", 'MSFT');
+            encodedParams.append('period', '1d')
   
       const options = {
         method: 'POST',
@@ -23,31 +35,22 @@ export default function Markets() {
         body: encodedParams
     };
   
-    fetch('https://yahoo-finance97.p.rapidapi.com/stock-info', options)
+    fetch('https://yahoo-finance97.p.rapidapi.com/price', options)
       .then(resp => resp.json())
-      .then(data => {
-        console.log(data.data.symbol);
-        setStockInfo(...stockInfo, data)
-    })
-    })
-
-    setStockInfo(renderStocks)
+      .then(data => processData(data))
   }, [])
-  
-    useEffect(() => {
-      console.log(stockInfo)
-  }, [stockInfo])
 
-  const stockElements = stockInfo.map((stock) => {
-    console.log(stock)
-    return (
-    <Text key={stock}>Hello</Text>
-    )
-  })
+
+  useEffect(() => {
+    console.log(stockInfoMSFT);
+  }, [stockInfoMSFT])
+
 
     return (
       <ScrollView horizontal={ true }>
-            {stockElements}
+           <Text style={{fontSize: 20}}>{stockInfoMSFT[0]} <Text style={{color: stockInfoMSFT[2]}}>{stockInfoMSFT[1]}</Text></Text>
       </ScrollView>
     )
   }
+
+  // <Text style={{fontSize: 20}}>{stockInfoMSFT[0]}<Text style={{color: stockInfoMSFT[2]}}>{stockInfoMSFT[1]}</Text></Text>
