@@ -9,7 +9,7 @@ export default function Markets() {
   const [stockInfoPINS, setStockInfoPINS] = useState([])
   const [stockInfoGOOGL, setStockInfoGOOGL] = useState([])
 
-  function processData(data) {
+  function processDataMSFT(data) {
     let color 
 
     if ((data.data[0].Close - data.data[0].Open) >= 0) {
@@ -17,7 +17,7 @@ export default function Markets() {
     } else {
         color = 'red'
     }
-    setStockInfoMSFT(['MSFT', (data.data[0].Close - data.data[0].Open).toFixed(2), color])
+    setStockInfoMSFT(['MSFT', ((data.data[0].Close - data.data[0].Open) / data.data[0].Open).toFixed(2), color])
   }
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Markets() {
   
     fetch('https://yahoo-finance97.p.rapidapi.com/price', options)
       .then(resp => resp.json())
-      .then(data => processData(data))
+      .then(data => processDataMSFT(data))
   }, [])
 
 
@@ -48,7 +48,7 @@ export default function Markets() {
 
     return (
       <ScrollView horizontal={ true }>
-           <Text style={{fontSize: 20}}>{stockInfoMSFT[0]} <Text style={{color: stockInfoMSFT[2]}}>{stockInfoMSFT[1]}</Text></Text>
+           <Text style={{fontSize: 20}}>{stockInfoMSFT[0]} <Text style={{color: stockInfoMSFT[2]}}>{stockInfoMSFT[1]}%</Text></Text>
       </ScrollView>
     )
   }
