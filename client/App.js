@@ -16,9 +16,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Form" path='/form' component={Form} />
       </Stack.Navigator>
-  
-    </NavigationContainer>
-        
+    </NavigationContainer>    
   );
 }
 
