@@ -11,6 +11,12 @@ export default function Form({modalVisible, setModalVisible}) {
   //   password: ''
   // });
 
+  // const { username, email, password } = user
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const signUp = (e) => {
     e.preventDefault();
@@ -31,9 +37,9 @@ export default function Form({modalVisible, setModalVisible}) {
     fetch("http://localhost:3000/users", {
           method: "POST",
           body: JSON.stringify({
-            username: "michael",
-            email: "email",
-            password: "password"
+            username: username,
+            email: email,
+            password: password
           }),
           headers: {
             "Accept": "application/json",
@@ -58,29 +64,27 @@ export default function Form({modalVisible, setModalVisible}) {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-            <Formik initialValues={{ email: '', username: '', password: '' }} onSubmit={values => console.log(values)}>
-                {({ handleChange, handleBlur, handleSubmit, values }) => (
                     <View>
                        <Text> Enter Email </Text> 
                         <TextInput
                         // style={textStyle.input}
-                        onChangeText={handleChange('email')}
-                        onBlur={handleBlur ('email')}
-                        value={values.email}
+                        onChange={(event) => setEmail(event.target.value)}
+                        // onBlur={handleBlur ('email')}
+                        value={email}
                         />
                        <Text> Enter Username </Text> 
                         <TextInput
                         // style={textStyle.input}
-                        onChangeText={handleChange('username')}
-                        onBlur={handleBlur ('username')}
-                        value={values.username}
+                        // onChangeText={handleChange('username')}
+                        // onBlur={handleBlur ('username')}
+                        value={username}
                         />
                         <Text> Password </Text>
                         <TextInput
                         // style={textStyle.input}
-                        onChangeText={handleChange('password')}
-                        onBlur={handleBlur ('password')}
-                        value={values.password}
+                        // onChangeText={handleChange('password')}
+                        // onBlur={handleBlur ('password')}
+                        value={password}
                         />
                         {/* <Button onPress={handleSubmit} title="Submit" /> */}
                         <Pressable
@@ -89,8 +93,8 @@ export default function Form({modalVisible, setModalVisible}) {
                         >
                             <Text style={styles.textStyle}>Submit</Text>
                         </Pressable>
-                    </View> )}
-                 </Formik>  
+                    </View>
+       
             </View>
           </View>
         </Modal>
