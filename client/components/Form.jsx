@@ -1,17 +1,7 @@
-import { Formik } from 'formik';
-import { Button, TextInput, View, StyleSheet } from 'react-native';
+import { TextInput, View, StyleSheet, Alert, Modal, Text, Pressable } from 'react-native';
 import React, { useState } from "react";
-import { Alert, Modal, Text, Pressable } from "react-native";
 
 export default function Form({modalVisible, setModalVisible}) {
-
-  // const [user, setUser] = useState({
-  //   username: '',
-  //   email: '',
-  //   password: ''
-  // });
-
-  // const { username, email, password } = user
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -20,19 +10,6 @@ export default function Form({modalVisible, setModalVisible}) {
 
   const signUp = (e) => {
     e.preventDefault();
-    // if (password.length < 6) {
-    //   alert("Password must be at least 6 characters")
-    //   return
-    // }
-    // if (email.indexOf("@") === -1) {
-    //   alert("Your email is not correct")
-    //   return
-    // }
-    // if (email.indexOf(".com") === -1) {
-    //   alert("Your email is not correct")
-    //   return
-    // }
-
 
     fetch("http://localhost:3000/users", {
           method: "POST",
@@ -67,28 +44,19 @@ export default function Form({modalVisible, setModalVisible}) {
                     <View>
                        <Text> Enter Email </Text> 
                         <TextInput
-                        // style={textStyle.input}
                         onChange={(event) => setEmail(event.target.value)}
-                        // onBlur={handleBlur ('email')}
                         value={email}
                         />
                        <Text> Enter Username </Text> 
                         <TextInput
-                        // style={textStyle.input}
-                        // onChangeText={handleChange('username')}
                         onChange={(event) => setUsername(event.target.value)}
-                        // onBlur={handleBlur ('username')}
                         value={username}
                         />
                         <Text> Password </Text>
                         <TextInput
-                        // style={textStyle.input}
-                        // onChangeText={handleChange('password')}
                         onChange={(event) => setPassword(event.target.value)}
-                        // onBlur={handleBlur ('password')}
                         value={password}
                         />
-                        {/* <Button onPress={handleSubmit} title="Submit" /> */}
                         <Pressable
                             style={[styles.button, styles.buttonClose]}
                             onPress={signUp}
@@ -96,16 +64,15 @@ export default function Form({modalVisible, setModalVisible}) {
                             <Text style={styles.textStyle}>Submit</Text>
                         </Pressable>
                     </View>
-       
             </View>
           </View>
         </Modal>
-        <Pressable
+        {/* <Pressable
           style={[styles.button, styles.buttonOpen]}
           onPress={() => setModalVisible(true)}
         >
           <Text style={styles.textStyle}>Show Modal</Text>
-        </Pressable>
+        </Pressable> */}
       </View>
     );
   }
