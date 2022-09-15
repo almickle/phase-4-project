@@ -16,9 +16,10 @@ skip_before_action :authenticate_user, only: :show
 
 
     def create
-        user=User.create!(user_params)
+        user = User.create!(user_params)
+        user.admin = params[:admin]
         session[:user_id] = user.id
-        render json: user, status: :created
+        render json: user, status: :ok
     end
 
     def update
@@ -35,7 +36,5 @@ skip_before_action :authenticate_user, only: :show
 
     def find_user
         User.find(params[:id]) 
-    end
-
-    
+    end    
 end
