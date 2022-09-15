@@ -1,4 +1,5 @@
 import { Image, TouchableOpacity } from 'react-native';
+import login from "./assets/login.jpg"
 
 export default function Login( { size } ) {
 
@@ -19,7 +20,7 @@ export default function Login( { size } ) {
   
     return (
       <TouchableOpacity onPress={handleLogin}>
-        <Image source={{uri: "https://clipground.com/images/icon-login-png-5.jpg"}} 
+        <Image source={login} 
               style={{
                   height: size,
                   width: undefined,
