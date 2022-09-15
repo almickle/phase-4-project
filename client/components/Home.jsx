@@ -6,7 +6,7 @@ import Content from "./Content";
 export default function Home() {
 
     return (
-      <View>
+      <View style={{ backgroundColor: 'white' }}>
           <Header/>
           <Content />
       </View>

@@ -20,9 +20,7 @@ export default function Header() {
   }
 
     return (
-      <View style={{
-                      alignItems: 'center',
-                    }}>
+      <View style={{ alignItems: 'center' }}>
           <Form modalVisible={modalVisible} setModalVisible={setModalVisible} />
           <View style={{
                           justifyContent: 'center',
