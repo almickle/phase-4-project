@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :is_authorized?, only: [:create, :update, :destroy]
   before_action :set_article, only: %i[ show update destroy ]
 
   # GET /articles

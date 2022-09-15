@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+skip_before_action :authenticate_user, only: :show
 
     def show
         if current_user    
@@ -15,9 +16,10 @@ class UsersController < ApplicationController
 
 
     def create
-        user=User.create!(user_params)
+        user = User.create!(user_params)
+        user.admin = params[:admin]
         session[:user_id] = user.id
-        render json: user, status: :created
+        render json: user, status: :ok
     end
 
     def update
@@ -34,7 +36,5 @@ class UsersController < ApplicationController
 
     def find_user
         User.find(params[:id]) 
-    end
-
-    
+    end    
 end
