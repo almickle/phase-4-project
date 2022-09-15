@@ -7,9 +7,12 @@ export default function Content() {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    fetch("https://newsapi.org/v2/everything?q=Apple&from=2022-09-14&sortBy=popularity&apiKey=b1ee5f6bc3bf477fa5c52bcbf6ee253e")
+    fetch("http://localhost:19006/articles")
     .then(resp => resp.json())
-    .then(data => setArticles(data.articles))
+    .then(data => {
+      console.log(data)
+      setArticles(data)
+    })
   }, [])
 
   const articleElements = articles.map(article => {

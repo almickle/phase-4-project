@@ -4,6 +4,41 @@ import React, { useState } from "react";
 import { Alert, Modal, Text, Pressable } from "react-native";
 
 export default function Form({modalVisible, setModalVisible}) {
+
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState(''); 
+
+  const signUp = (e) => {
+    e.preventDefault();
+    // if (password.length < 6) {
+    //   alert("Password must be at least 6 characters")
+    //   return
+    // }
+    // if (email.indexOf("@") === -1) {
+    //   alert("Your email is not correct")
+    //   return
+    // }
+    // if (email.indexOf(".com") === -1) {
+    //   alert("Your email is not correct")
+    //   return
+    // }
+
+
+    fetch("http://localhost:3000/users", {
+          method: "POST",
+          body: JSON.stringify({
+            username: username,
+            email: email,
+            password: password
+          }),
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          },
+        })
+  };
+
     return (
         <View style={styles.centeredView}>
         <Modal
@@ -26,6 +61,13 @@ export default function Form({modalVisible, setModalVisible}) {
                         onChangeText={handleChange('email')}
                         onBlur={handleBlur ('email')}
                         value={values.email}
+                        />
+                       <Text> Enter Username </Text> 
+                        <TextInput
+                        // style={textStyle.input}
+                        onChangeText={handleChange('username')}
+                        onBlur={handleBlur ('username')}
+                        value={values.username}
                         />
                         <Text> Password </Text>
                         <TextInput
