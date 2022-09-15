@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Button } from 'react-native';
 import Navbar from "./Navbar";
 import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
 import Form from "./Form";
 import DenBoiz from "./widgets/assets/DenBoiz.png"
+import StackNavigator from "react-navigation"
 
-export default function Header() {
+export default function Header( { navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false)
 
@@ -37,6 +38,7 @@ export default function Header() {
           <Login size={headerSize} handleClickLogin={handleClickLogin}/>
           </View>
         <Navbar />
+        <Button></Button>
         {/* <Markets /> */}
       </View>
     );

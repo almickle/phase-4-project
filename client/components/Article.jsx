@@ -7,9 +7,6 @@ export default function Article( { article }) {
 
   const { title, urlToImage, category, content, description, author, source, publishedAt
   } = article
-  // const content = article.content
-  // const slicedContent = content.slice(0, 194)
-  console.log(article)
 
   const date = publishedAt.slice(0,10)
 
@@ -30,9 +27,6 @@ export default function Article( { article }) {
           <Text style={styles.fonts}>Date: {date}</Text>
 
           <Text style={styles.fonts}>{category}</Text>
-          {/* <Text style={styles.fonts}>{content}</Text> */}
-          
-          {/* <Image source={{uri: {image}}}></Image> */}
           </View>
       </ScrollView>
     );
