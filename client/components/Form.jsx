@@ -5,9 +5,12 @@ import { Alert, Modal, Text, Pressable } from "react-native";
 
 export default function Form({modalVisible, setModalVisible}) {
 
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(''); 
+  const [user, setUser] = useState({
+    username: '',
+    email: '',
+    password: ''
+  });
+
 
   const signUp = (e) => {
     e.preventDefault();
@@ -38,6 +41,10 @@ export default function Form({modalVisible, setModalVisible}) {
           },
         })
   };
+
+  const addUser = (user) => {
+   
+  }
 
     return (
         <View style={styles.centeredView}>
