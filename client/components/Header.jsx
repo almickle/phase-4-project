@@ -15,12 +15,12 @@ export default function Header() {
   const [headerSize, setHeaderSize] = useState(40)
 
 
-  function handleLogin() {
+  function handleClickLogin() {
       setModalVisible(true)
   }
 
     return (
-      <View style={{ alignItems: 'center' }}>
+      <View style={{ alignItems: 'center', marginBottom: "1%" }}>
           <Form modalVisible={modalVisible} setModalVisible={setModalVisible} />
           <View style={{
                           justifyContent: 'center',
@@ -34,7 +34,7 @@ export default function Header() {
                           aspectRatio: 6
                         }}
                   source={DenBoiz}/>
-          <Login size={headerSize} handleLogin={handleLogin}/>
+          <Login size={headerSize} handleClickLogin={handleClickLogin}/>
           </View>
         <Navbar />
         {/* <Markets /> */}

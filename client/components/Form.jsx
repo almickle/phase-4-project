@@ -1,4 +1,4 @@
-import { TextInput, View, StyleSheet, Alert, Modal, Text, Pressable } from 'react-native';
+import { TextInput, View, StyleSheet, Alert, Modal, Text, Pressable, TouchableOpacity } from 'react-native';
 import React, { useState } from "react";
 
 export default function Form({modalVisible, setModalVisible}) {
@@ -7,6 +7,34 @@ export default function Form({modalVisible, setModalVisible}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [loginVisible, setLoginVisible] = useState(false)
+
+  function handleLogin() {
+      setLoginVisible(true)
+  }
+
+  function handleSignup() {
+    setLoginVisible(false)
+  }
+
+
+  const login = (e) => {
+    e.preventDefault();
+
+    fetch("http://localhost:3000/login", {
+          method: "POST",
+          body: JSON.stringify({
+            username: username,
+            password: password
+          }),
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+          },
+        })
+        .catch(errors => console.log(errors))
+        setModalVisible(!modalVisible)
+  };
 
   const signUp = (e) => {
     e.preventDefault();
@@ -27,6 +55,42 @@ export default function Form({modalVisible, setModalVisible}) {
         setModalVisible(!modalVisible)
   };
 
+  if (loginVisible == true) {
+    return (
+      <View style={styles.centeredView}>
+      <Modal animationType="slide" transparent={true} visible={modalVisible}
+             onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    setModalVisible(!modalVisible);
+                    }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+                  <View>
+                     <Text> Enter Username </Text> 
+                      <TextInput
+                        onChange={(event) => setUsername(event.target.value)}
+                        value={username}
+                      />
+                      <Text> Password </Text>
+                      <TextInput
+                        onChange={(event) => setPassword(event.target.value)}
+                        value={password}
+                      />
+                      <Pressable
+                          style={[styles.button, styles.buttonClose]}
+                          onPress={login}
+                      >
+                          <Text style={styles.textStyle}>Login</Text>
+                      </Pressable>
+                      <TouchableOpacity onPress={ handleSignup } style={{ marginTop: "10%" }}><Text>Don't have an account? Signup</Text></TouchableOpacity>
+                  </View>
+          </View>
+        </View>
+      </Modal>
+    </View>
+    )
+  } else {
 
     return (
         <View style={styles.centeredView}>
@@ -61,14 +125,16 @@ export default function Form({modalVisible, setModalVisible}) {
                             style={[styles.button, styles.buttonClose]}
                             onPress={signUp}
                         >
-                            <Text style={styles.textStyle}>Submit</Text>
+                            <Text style={styles.textStyle}>Signup</Text>
                         </Pressable>
+                        <TouchableOpacity onPress={ handleLogin } style={{ marginTop: "10%" }}><Text>Already have an account? Login</Text></TouchableOpacity>
                     </View>
             </View>
           </View>
         </Modal>
       </View>
-    );
+    )
+        }
   }
 
   const styles = StyleSheet.create({
@@ -102,6 +168,7 @@ export default function Form({modalVisible, setModalVisible}) {
       backgroundColor: "#F194FF",
     },
     buttonClose: {
+      marginTop: "7%",
       backgroundColor: "#2196F3",
     },
     textStyle: {
