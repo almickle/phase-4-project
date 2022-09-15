@@ -1,4 +1,4 @@
-#!C:\Ruby27-x64\msys64\usr\bin ruby
+#!C:\Ruby27-x64\msys64\usr\bin\env.exe ruby
 # frozen_string_literal: true
 
 #
