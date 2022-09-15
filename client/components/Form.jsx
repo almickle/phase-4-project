@@ -68,7 +68,7 @@ export default function Form({modalVisible, setModalVisible}) {
                        <Text> Enter Email </Text> 
                         <TextInput
                         // style={textStyle.input}
-                        onChange={(event) => console.log(event)}
+                        onChange={(event) => setEmail(event.target.value)}
                         // onBlur={handleBlur ('email')}
                         value={email}
                         />
@@ -76,7 +76,7 @@ export default function Form({modalVisible, setModalVisible}) {
                         <TextInput
                         // style={textStyle.input}
                         // onChangeText={handleChange('username')}
-                        onChange={(event) => setEmail(event.target.value)}
+                        onChange={(event) => setUsername(event.target.value)}
                         // onBlur={handleBlur ('username')}
                         value={username}
                         />
@@ -84,6 +84,7 @@ export default function Form({modalVisible, setModalVisible}) {
                         <TextInput
                         // style={textStyle.input}
                         // onChangeText={handleChange('password')}
+                        onChange={(event) => setPassword(event.target.value)}
                         // onBlur={handleBlur ('password')}
                         value={password}
                         />

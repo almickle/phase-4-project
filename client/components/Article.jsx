@@ -1,4 +1,5 @@
-import { ScrollView, Image, Text } from 'react-native';
+import { setNestedObjectValues } from 'formik';
+import { View, ScrollView, StyleSheet, Image, Text } from 'react-native';
 
 export default function Article( { article }) {
 
@@ -8,13 +9,52 @@ export default function Article( { article }) {
   // const content = article.content
   // const slicedContent = content.slice(0, 194)
 
-  console.log(content)
+  // console.log()
     return (
       <ScrollView>
-          <Text>{title}</Text>
-          <Text>{category}</Text>
-          <Text>{content}</Text>
+        <View style={styles.container}>
+          <Image
+          style={styles.image}
+          source={{
+            uri: urlToImage,
+          }}
+          />
+          <Text style={styles.name}>{title}</Text>
+          <Text style={styles.fonts}>{category}</Text>
+          {/* <Text style={styles.fonts}>{content}</Text> */}
+          
           {/* <Image source={{uri: {image}}}></Image> */}
+          </View>
       </ScrollView>
     );
   }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      border: 'solid'
+    },
+    fonts: {
+      marginBottom: 8,
+    },
+    user: {
+      flexDirection: 'row',
+      marginBottom: 6,
+    },
+    image: {
+      width: 500,
+      height: 250,
+      marginRight: 10,
+      alignItems: 'center'
+    },
+    name: {
+      fontSize: 16,
+      marginTop: 5,
+    }, logo: {
+      width: 66,
+      height: 58,
+      fontWeight: "bold",
+      alignItems: "center",
+
+    }
+    });
