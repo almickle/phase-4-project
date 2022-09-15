@@ -131,18 +131,18 @@ export default function Markets() {
       .then(data => processDataGOOGL(data))
   }, [])
 
-
+const fontSize = 16
 
     return (
       <View style={{display: 'flex', flexDirection: 'row'}}>
           <View style={{display: 'flex', flexDirection: 'row', marginRight: 12}}>
-              <Text style={{fontSize: 20, fontWeight: 'bold', marginRight: 4}}>{stockInfoMSFT[0]}</Text><Text style={{fontSize: 20, fontWeight: 'bold', color: stockInfoMSFT[2]}}>{stockInfoMSFT[3]}{stockInfoMSFT[1]}%</Text>
+              <Text style={{fontSize: fontSize, fontWeight: 'bold', marginRight: 4}}>{stockInfoMSFT[0]}</Text><Text style={{fontSize: fontSize, fontWeight: 'bold', color: stockInfoMSFT[2]}}>{stockInfoMSFT[3]}{stockInfoMSFT[1]}%</Text>
           </View>
           <View style={{display: 'flex', flexDirection: 'row', marginRight: 12}}>
-              <Text style={{fontSize: 20, fontWeight: 'bold', marginRight: 4}}>{stockInfoPINS[0]}</Text><Text style={{fontSize: 20, fontWeight: 'bold', color: stockInfoPINS[2]}}>{stockInfoPINS[3]}{stockInfoPINS[1]}%</Text>
+              <Text style={{fontSize: fontSize, fontWeight: 'bold', marginRight: 4}}>{stockInfoPINS[0]}</Text><Text style={{fontSize: fontSize, fontWeight: 'bold', color: stockInfoPINS[2]}}>{stockInfoPINS[3]}{stockInfoPINS[1]}%</Text>
           </View>
           <View style={{display: 'flex', flexDirection: 'row', marginRight: 12}}>
-              <Text style={{fontSize: 20, fontWeight: 'bold', marginRight: 4}}>{stockInfoGOOGL[0]}</Text><Text style={{fontSize: 20, fontWeight: 'bold', color: stockInfoGOOGL[2]}}>{stockInfoGOOGL[3]}{stockInfoGOOGL[1]}%</Text>
+              <Text style={{fontSize: fontSize, fontWeight: 'bold', marginRight: 4}}>{stockInfoGOOGL[0]}</Text><Text style={{fontSize: fontSize, fontWeight: 'bold', color: stockInfoGOOGL[2]}}>{stockInfoGOOGL[3]}{stockInfoGOOGL[1]}%</Text>
           </View>
       </View>
     )

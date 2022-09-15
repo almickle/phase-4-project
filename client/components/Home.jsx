@@ -7,7 +7,7 @@ export default function Home() {
 
     return (
       <View style={{ backgroundColor: 'white' }}>
-          <Header/>
+          <Header />
           <Content />
       </View>
     );

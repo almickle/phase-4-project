@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Button } from 'react-native';
 import Navbar from "./Navbar";
 import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
 import Form from "./Form";
 import DenBoiz from "./widgets/assets/DenBoiz.png"
+import StackNavigator from "react-navigation"
 
-export default function Header() {
+export default function Header( { navigation }) {
 
   const [modalVisible, setModalVisible] = useState(false)
 
@@ -15,12 +16,12 @@ export default function Header() {
   const [headerSize, setHeaderSize] = useState(40)
 
 
-  function handleLogin() {
+  function handleClickLogin() {
       setModalVisible(true)
   }
 
     return (
-      <View style={{ alignItems: 'center' }}>
+      <View style={{ alignItems: 'center', marginBottom: "1%" }}>
           <Form modalVisible={modalVisible} setModalVisible={setModalVisible} />
           <View style={{
                           justifyContent: 'center',
@@ -34,9 +35,10 @@ export default function Header() {
                           aspectRatio: 6
                         }}
                   source={DenBoiz}/>
-          <Login size={headerSize} handleLogin={handleLogin}/>
+          <Login size={headerSize} handleClickLogin={handleClickLogin}/>
           </View>
         <Navbar />
+        <Button></Button>
         {/* <Markets /> */}
       </View>
     );
