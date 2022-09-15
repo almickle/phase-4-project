@@ -15,7 +15,7 @@ export default function Home() {
     .then(data => {
       console.log(data)
       setTimeState(data)})
-  })
+  }, [])
   
   // const url = "https://localhost:3000/articles";
   // axios.get(url, {

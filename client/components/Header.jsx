@@ -7,8 +7,7 @@ import Weather from "./widgets/Weather.jsx"
 import Form from "./Form";
 
 export default function Header() {
-  // const headerSize = 40
-  // const headerSize = 40
+
   const [modalVisible, setModalVisible] = useState(false)
 
 6

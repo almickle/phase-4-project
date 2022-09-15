@@ -5,11 +5,11 @@ import { Alert, Modal, Text, Pressable } from "react-native";
 
 export default function Form({modalVisible, setModalVisible}) {
 
-  const [user, setUser] = useState({
-    username: '',
-    email: '',
-    password: ''
-  });
+  // const [user, setUser] = useState({
+  //   username: '',
+  //   email: '',
+  //   password: ''
+  // });
 
 
   const signUp = (e) => {
@@ -31,20 +31,19 @@ export default function Form({modalVisible, setModalVisible}) {
     fetch("http://localhost:3000/users", {
           method: "POST",
           body: JSON.stringify({
-            username: username,
-            email: email,
-            password: password
+            username: "michael",
+            email: "email",
+            password: "password"
           }),
           headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
           },
         })
+        .catch(errors => console.log(errors))
+        setModalVisible(!modalVisible)
   };
 
-  const addUser = (user) => {
-   
-  }
 
     return (
         <View style={styles.centeredView}>
@@ -59,7 +58,7 @@ export default function Form({modalVisible, setModalVisible}) {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-            <Formik initialValues={{ email: '', password: '' }} onSubmit={values => console.log(values)}>
+            <Formik initialValues={{ email: '', username: '', password: '' }} onSubmit={values => console.log(values)}>
                 {({ handleChange, handleBlur, handleSubmit, values }) => (
                     <View>
                        <Text> Enter Email </Text> 
@@ -86,7 +85,7 @@ export default function Form({modalVisible, setModalVisible}) {
                         {/* <Button onPress={handleSubmit} title="Submit" /> */}
                         <Pressable
                             style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}
+                            onPress={signUp}
                         >
                             <Text style={styles.textStyle}>Submit</Text>
                         </Pressable>
