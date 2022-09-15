@@ -1,12 +1,12 @@
 import { Image, TouchableOpacity } from 'react-native';
-// import login from "./assets/login.jpg"
+import login from "./assets/login.jpg"
 
 export default function Login( { size, handleLogin } ) {
   
   
     return (
       <TouchableOpacity onPress={handleLogin}>
-        <Image 
+        <Image source={login}
               style={{
                   height: size,
                   width: undefined,

@@ -29,9 +29,9 @@ export default function Header() {
                           flexDirection: 'row',
                           marginTop: 0,
                       }}>
-          <Weather size={headerSize} marginTop={marginTop} marginRight={marginSide}/>
+          {/* <Weather size={headerSize} marginTop={marginTop} marginRight={marginSide}/> */}
           <h1 style={{fontSize: 50}}>𝕯𝖊𝖓 𝕭𝖔𝖎𝖟 𝕿𝖎𝖒𝖊𝖘</h1>
-          <Login size={headerSize} handleLogin={handleLogin} marginTop={marginTop} marginLeft={marginSide}/>
+          {/* <Login size={headerSize} handleLogin={handleLogin} marginTop={marginTop} marginLeft={marginSide}/> */}
           </div>
           <div style={{height: 2, backgroundColor: "black", width: '80%',}}></div>
         <Navbar />
