@@ -12,6 +12,7 @@ export default function Content() {
     
       setArticles(data.articles)
     })
+    .catch(errors => console.log(errors))
   }, [])
 
 

@@ -5,9 +5,9 @@ import { ScrollView, View, Text } from 'react-native';
 export default function Markets() {
 
   const stockArray = ['PINS', 'MSFT', 'META', 'GOOGL']
-  const [stockInfoMSFT, setStockInfoMSFT] = useState(["", 0, "", ""])
-  const [stockInfoPINS, setStockInfoPINS] = useState(["", 0, "", ""])
-  const [stockInfoGOOGL, setStockInfoGOOGL] = useState(["", 0, "", ""])
+  const [stockInfoMSFT, setStockInfoMSFT] = useState([])
+  const [stockInfoPINS, setStockInfoPINS] = useState([])
+  const [stockInfoGOOGL, setStockInfoGOOGL] = useState([])
 
 
   // MSFT 

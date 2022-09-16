@@ -19,6 +19,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+
     <NavigationContainer>
       <Stack.Navigator >
         <Stack.Screen name="Home" component={Home} />
@@ -26,8 +27,8 @@ export default function App() {
         <Stack.Screen name="Politics" component={Politics} />
       </Stack.Navigator>
     </NavigationContainer>
-);
-}
+
+)}
 
 const styles = StyleSheet.create({
   container: {

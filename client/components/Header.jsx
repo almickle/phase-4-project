@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Button } from 'react-native';
 import Navbar from "./Navbar";
 import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
@@ -27,7 +27,7 @@ export default function Header( { navigation }) {
                           display: 'flex',
                           flexDirection: 'row'
                       }}>
-          <Weather size={headerSize} onPress={() => setModalVisible(modalVisible)} />
+          <Weather size={headerSize} />
           <Image style={{
                           height: headerSize,
                           width: undefined,

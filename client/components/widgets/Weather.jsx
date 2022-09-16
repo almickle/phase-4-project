@@ -52,6 +52,7 @@ useEffect(() => {
       .then(data => {
         console.log(data)
         setCoordinates([data.latitude, data.longitude])})
+      .catch(errors => console.log(errors))
 }, [])
 
 // Get weather
@@ -59,6 +60,7 @@ useEffect(() => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coordinates[0]}&lon=${coordinates[1]}&appid=d8d8aef51a04e640d1b493ebac74e354`)
     .then(resp => resp.json())
     .then(data => {processWeatherData(data.weather[0].main); console.log(data)})
+    .catch(errors => console.log(errors))
   }, [coordinates])
 
 

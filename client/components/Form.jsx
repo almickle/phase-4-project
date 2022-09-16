@@ -51,8 +51,8 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
             "Content-Type": "application/json",
           },
         })
+        .then(() => setModalVisible(!modalVisible))
         .catch(errors => console.log(errors))
-        setModalVisible(!modalVisible)
         .then(() => navigation.navigate('Home'))
   };
 
