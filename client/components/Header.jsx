@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { View, Image, Button } from 'react-native';
+import { View, Image } from 'react-native';
 import Navbar from "./Navbar";
 import Login from "./widgets/Login.jsx"
 import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
 import Form from "./Form";
 import DenBoiz from "./widgets/assets/DenBoiz.png"
-import StackNavigator from "react-navigation"
 
 export default function Header( { navigation }) {
 
@@ -38,7 +37,6 @@ export default function Header( { navigation }) {
           <Login size={headerSize} handleClickLogin={handleClickLogin}/>
           </View>
         <Navbar />
-        <Button></Button>
         {/* <Markets /> */}
       </View>
     );
