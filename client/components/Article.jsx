@@ -1,4 +1,3 @@
-import { setNestedObjectValues } from 'formik';
 import { View, ScrollView, StyleSheet, Image, Text } from 'react-native';
 
 export default function Article( { article }) {
@@ -20,8 +19,7 @@ export default function Article( { article }) {
             uri: urlToImage,
           }}
           />
-          <Text fontWeight='bold' 
-          style={styles.name}>{title}</Text>
+          <Text style={styles.name}>{title}</Text>
           <Text style={styles.fonts}>Authors: {author}</Text>
           <Text style={styles.fonts}>Sources: {newsChannel}</Text>
           <Text style={styles.fonts}>Date: {date}</Text>

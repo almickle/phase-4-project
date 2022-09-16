@@ -22,6 +22,7 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+
     <NavigationContainer>
       <Stack.Navigator >
         <Stack.Screen name="Home" component={Home} />
@@ -32,8 +33,8 @@ export default function App() {
         <Stack.Screen name="Technology" component={Technology} />
       </Stack.Navigator>
     </NavigationContainer>
-);
-}
+
+)}
 
 const styles = StyleSheet.create({
   container: {

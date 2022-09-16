@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import Article from './Article';
 
 export default function Content() {
@@ -12,12 +12,13 @@ export default function Content() {
     
       setArticles(data.articles)
     })
+    .catch(errors => console.log(errors))
   }, [])
 
 
   const articleElements = articles.map(article => {
     return (
-      <Article style={{
+      <Article key={article.title} style={{
                       justifyContent: 'center',
                       display: 'flex',
                       flexDirection: 'row',

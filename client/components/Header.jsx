@@ -6,7 +6,6 @@ import Markets from "./widgets/Markets.jsx"
 import Weather from "./widgets/Weather.jsx"
 import Form from "./Form";
 import DenBoiz from "./widgets/assets/DenBoiz.png"
-import StackNavigator from "react-navigation"
 
 export default function Header( { navigation }) {
 
@@ -28,7 +27,7 @@ export default function Header( { navigation }) {
                           display: 'flex',
                           flexDirection: 'row'
                       }}>
-          <Weather size={headerSize} onPress={() => setModalVisible(modalVisible)} />
+          <Weather size={headerSize} />
           <Image style={{
                           height: headerSize,
                           width: undefined,
