@@ -23,6 +23,7 @@ export default function Article( { article }) {
           <Text style={styles.fonts}>Authors: {author}</Text>
           <Text style={styles.fonts}>Sources: {newsChannel}</Text>
           <Text style={styles.fonts}>Date: {date}</Text>
+          <Text style={styles.content}>{content}</Text>
 
           <Text style={styles.fonts}>{category}</Text>
           </View>
@@ -36,7 +37,11 @@ export default function Article( { article }) {
       border: 'solid'
     },
     fonts: {
+      fontSize: 13,
       marginBottom: 8,
+    },
+    content: {
+      fontSize: 11,
     },
     user: {
       flexDirection: 'row',
@@ -51,6 +56,7 @@ export default function Article( { article }) {
     name: {
       fontSize: 16,
       marginTop: 5,
+      fontWeight: 'bold'
     }, logo: {
       width: 66,
       height: 58,
