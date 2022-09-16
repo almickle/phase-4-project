@@ -7,6 +7,8 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [user, setUser] = useState("")
+
   const [loginVisible, setLoginVisible] = useState(false)
 
   function handleLogin() {
@@ -30,11 +32,12 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
           headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
-          },
+          }
         })
+        .then(resp => resp.json())
+        .then((user) => setUser(user))
         .then(() => setModalVisible(!modalVisible))
         .catch(errors => console.log(errors))
-        
   };
 
   const signUp = (e) => {
@@ -53,8 +56,9 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
           },
         })
         .then(() => setModalVisible(!modalVisible))
+        .then((resp => resp.json()))
+        .then((data) => console.log(data))
         .catch(errors => console.log(errors))
-        .then(() => navigation.navigate('Home'))
   };
 
   if (loginVisible == true) {
