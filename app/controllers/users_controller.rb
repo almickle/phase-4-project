@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     def create
         user = User.create!(user_params)
-        user.admin = params[:admin]
+        user.subscribed = params[:subscribed]
         session[:user_id] = user.id
         render json: user, status: :ok
     end
