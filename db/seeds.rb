@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+t.string "title"
+t.string "image"
+t.string "description"
+t.string "content"
+t.string "publish_date"
+t.string "category"
+
 Article.create([{ title: "La Sapciensa" ,  image: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/05/02/08/curse-of-la-llorona.jpg",  description: "None of the business",  content: "Content is key",  publish_date: "2021-10-10", category: "sports"}])
 
 Article.create([{ title: "La LLorona" ,  image: "https://images.tntdrama.com/tnt/$dyna_params/https%3A%2F%2Fi.cdn.tntdrama.com%2Fassets%2Fimages%2F2021%2F05%2FCurseOfLaLlorona-1600x900_0.jpgg",  description: "On the fly",  content: "Making it up", publish_date: "2022-10-10", category: "arts"}])
@@ -25,4 +32,13 @@ Author.create([{first_name: "Graham", last_name: "Price"}])
 User.create([{username: "Mike", password: "Mike1", email: "mike@gmail.com"}])
 User.create([{username: "Gabe", password: "Gabe1", email: "gabe@gmail.com"}])
 User.create([{username: "Chris", password: "Chris1", email: "chris@gmail.com"}])
+
+t.integer "user_id"
+t.integer "article_id"
+
+FavoriteArticle.create([{user_id: 1, article_id: 4}])
+FavoriteArticle.create([{user_id: 1, article_id: 3}])
+FavoriteArticle.create([{user_id: 1, article_id: 2}])
+FavoriteArticle.create([{user_id: 1, article_id: 1}])
+FavoriteArticle.create([{user_id: 1, article_id: 5}])
 
