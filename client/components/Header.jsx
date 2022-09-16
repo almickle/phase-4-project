@@ -21,7 +21,7 @@ export default function Header( { navigation }) {
 
     return (
       <View style={{ alignItems: 'center', marginBottom: "1%" }}>
-          <Form modalVisible={modalVisible} setModalVisible={setModalVisible} />
+          <Form navigation={navigation} modalVisible={modalVisible} setModalVisible={setModalVisible} />
           <View style={{
                           justifyContent: 'center',
                           display: 'flex',
@@ -37,6 +37,7 @@ export default function Header( { navigation }) {
           <Login size={headerSize} handleClickLogin={handleClickLogin}/>
           </View>
         <Navbar />
+        <Button title="I work" onPress={() => navigation.navigate('Politics')}></Button>
         {/* <Markets /> */}
       </View>
     );
