@@ -3,11 +3,11 @@ import Header from "./Header";
 import Content from "./Content";
 
 
-export default function Home() {
+export default function Home({ navigation }) {
 
     return (
       <View style={{ backgroundColor: 'white' }}>
-          <Header />
+          <Header navigation={navigation} />
           <Content />
       </View>
     );

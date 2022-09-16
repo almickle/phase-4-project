@@ -1,6 +1,7 @@
 // import React from 'react';
 import Home from './components/Home';
 import Form from './components/Form';
+import Politics from "./components/Politics"
 import React from "react";
 import { StyleSheet, Text, View, AppRegistry } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -16,13 +17,13 @@ import { NavigationContainer } from '@react-navigation/native';
 const Stack = createNativeStackNavigator();
 
 
-
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Form" component={Form} />
+        <Stack.Screen name="Politics" component={Politics} />
       </Stack.Navigator>
     </NavigationContainer>
 );

@@ -1,7 +1,7 @@
 import { TextInput, View, StyleSheet, Alert, Modal, Text, Pressable, TouchableOpacity } from 'react-native';
 import React, { useState } from "react";
 
-export default function Form({modalVisible, setModalVisible}) {
+export default function Form({navigation, modalVisible, setModalVisible}) {
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -53,6 +53,7 @@ export default function Form({modalVisible, setModalVisible}) {
         })
         .catch(errors => console.log(errors))
         setModalVisible(!modalVisible)
+        .then(() => navigation.navigate('Home'))
   };
 
   if (loginVisible == true) {
