@@ -1,5 +1,6 @@
-import { TextInput, View, StyleSheet, Alert, Modal, Text, Pressable, TouchableOpacity } from 'react-native';
-import React, { useState } from "react";
+import { TextInput, View, StyleSheet, Alert, Modal, Text, Pressable, TouchableOpacity, Image } from 'react-native';
+import React, { useEffect, useState } from "react";
+import login from "./widgets/assets/login.jpg"
 
 export default function Form({navigation, modalVisible, setModalVisible}) {
 
@@ -20,7 +21,7 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
   }
 
 
-  const login = (e) => {
+  const loginUser = (e) => {
     e.preventDefault();
 
     fetch("http://localhost:3000/login", {
@@ -35,12 +36,12 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
           }
         })
         .then(resp => resp.json())
-        .then((user) => setUser(user))
+        .then((data) => setUser(data))
         .then(() => setModalVisible(!modalVisible))
         .catch(errors => console.log(errors))
   };
 
-  const signUp = (e) => {
+  const signUpUser = (e) => {
     e.preventDefault();
 
     fetch("http://localhost:3000/users", {
@@ -55,11 +56,47 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
             "Content-Type": "application/json",
           },
         })
-        .then(() => setModalVisible(!modalVisible))
         .then((resp => resp.json()))
-        .then((data) => console.log(data))
+        .then((data) => setUser(data))
+        .then(() => setModalVisible(!modalVisible))
+        .then(() => { fetch("http://localhost:3000/login", {
+                          method: "POST",
+                          body: JSON.stringify({
+                            username: username,
+                            password: password
+                          }),
+                          headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json",
+                          }
+                        })
+                        .then(resp => resp.json())
+                        .then((data) => setUser(data))
+                        .catch(errors => console.log(errors))
+        })
         .catch(errors => console.log(errors))
   };
+
+  useEffect(() => console.log(user), [user])
+
+  if (user !== "") {
+    return (
+      <View style={styles.centeredView}>
+      <Modal animationType="slide" transparent={true} visible={modalVisible}
+             onRequestClose={() => {
+                    Alert.alert("Modal has been closed.");
+                    setModalVisible(!modalVisible);
+                    }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+                  {/* <Image source={login}/> */}
+                  <Text>Already logged in as {user.username}</Text>
+          </View>
+        </View>
+      </Modal>
+    </View>
+    ) } else {
 
   if (loginVisible == true) {
     return (
@@ -85,7 +122,7 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
                       />
                       <Pressable
                           style={[styles.button, styles.buttonClose]}
-                          onPress={login}
+                          onPress={loginUser}
                       >
                           <Text style={styles.textStyle}>Login</Text>
                       </Pressable>
@@ -129,7 +166,7 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
                         />
                         <Pressable
                             style={[styles.button, styles.buttonClose]}
-                            onPress={signUp}
+                            onPress={signUpUser}
                         >
                             <Text style={styles.textStyle}>Signup</Text>
                         </Pressable>
@@ -140,7 +177,7 @@ export default function Form({navigation, modalVisible, setModalVisible}) {
         </Modal>
       </View>
     )
-        }
+        }}
   }
 
   const styles = StyleSheet.create({
