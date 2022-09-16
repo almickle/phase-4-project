@@ -48,6 +48,7 @@ export default function Markets() {
     fetch('https://yahoo-finance97.p.rapidapi.com/price-customdate', options)
       .then(resp => resp.json())
       .then(data => processDataMSFT(data))
+      .catch(errors => console.log(errors))
   }, [])
 
 
@@ -89,6 +90,7 @@ export default function Markets() {
     fetch('https://yahoo-finance97.p.rapidapi.com/price-customdate', options)
       .then(resp => resp.json())
       .then(data => processDataPINS(data))
+      .catch(errors => console.log(errors))
   }, [])
 
   // GOOGL
@@ -129,6 +131,7 @@ export default function Markets() {
     fetch('https://yahoo-finance97.p.rapidapi.com/price-customdate', options)
       .then(resp => resp.json())
       .then(data => processDataGOOGL(data))
+      .catch(errors => console.log(errors))
   }, [])
 
 const fontSize = 16

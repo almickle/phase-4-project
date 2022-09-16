@@ -66,10 +66,11 @@ useEffect(() => {
     return (
       <Image source={weatherIcon} 
              style={{
-                height: size,
+                height: size + 10,
                 width: undefined,
                 aspectRatio: 1,
                 marginRight: 20,
+                marginTop: -5
       }}/>
     );
   }
