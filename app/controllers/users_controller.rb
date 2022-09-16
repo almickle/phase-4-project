@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-skip_before_action :authenticate_user, only: :show
+# skip_before_action :authenticate_user, only: :show
 
     def show
         if current_user    
@@ -17,7 +17,7 @@ skip_before_action :authenticate_user, only: :show
 
     def create
         user = User.create!(user_params)
-        user.admin = params[:admin]
+        user.subscribed = params[:subscribed]
         session[:user_id] = user.id
         render json: user, status: :ok
     end

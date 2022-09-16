@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     include ActionController::Cookies
-    before_action :authenticate_user
+    # before_action :authenticate_user
     
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
     private
 
     def current_user
-       @current_user ||= User.find_by_id(session[:user_id]) #memoization: caching experience
+       current_user = User.find_by_id(session[:user_id]) #memoization: caching experience
     end
 
     def render_not_found_response(object)
@@ -21,14 +21,14 @@ class ApplicationController < ActionController::API
         status: :unprocessable_entity
     end
 
-    def authenticate_user
-        render json: {errors: "Not Authorized"}, 
-        status: :unauthorized unless current_user
-    end
+    # def authenticate_user
+    #     render json: {errors: "Not Authorized"}, 
+    #     status: :unauthorized unless current_user
+    # end
 
-    def is_authorized?
-        permitted = current_user.admin?
-        render json: {errors: "User does not have admin permission"}, 
-        status: :forbidden unless permitted 
-    end
+    # def is_authorized?
+    #     permitted = current_user.subscribed?
+    #     render json: {errors: "User not subscribed"}, 
+    #     status: :forbidden unless permitted 
+    # end
 end

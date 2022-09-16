@@ -16,5 +16,13 @@ Article.create([{ title: "Miguel" ,  image: "https://www.greaterburlington.com/i
 
 Article.create([{ title: "EL venado" ,  image: "https://dearfinancial.com/wp-content/uploads/michael-dear-ea-tax-solutions.jpg",  description: "Wow thats's a business",  content: "No content",  publish_date: "2021-11-10",  category: "fashion"}])
 
+Author.create([{first_name: "Michael", last_name: "Dear"}])
+Author.create([{first_name: "Gabriel", last_name: "Burgos"}])
+Author.create([{first_name: "Christian", last_name: "Trublet"}])
+Author.create([{first_name: "Hammer", last_name: "Baby"}])
+Author.create([{first_name: "Graham", last_name: "Price"}])
 
+User.create([{username: "Mike", password: "Mike1", email: "mike@gmail.com"}])
+User.create([{username: "Gabe", password: "Gabe1", email: "gabe@gmail.com"}])
+User.create([{username: "Chris", password: "Chris1", email: "chris@gmail.com"}])
 
