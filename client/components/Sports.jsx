@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import Article from './Article';
 
-export default function Content() {
+export default function Sports() {
 
   const [articles, setArticles] = useState([])
   useEffect(() => {
-    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=b1ee5f6bc3bf477fa5c52bcbf6ee253e&category=health")
+    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=b1ee5f6bc3bf477fa5c52bcbf6ee253e&category=sports")
     .then(resp => resp.json())
     .then(data => {
     

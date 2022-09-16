@@ -1,7 +1,10 @@
 // import React from 'react';
 import Home from './components/Home';
 import Form from './components/Form';
-import Politics from "./components/Politics"
+import Health from "./components/Health"
+import Sports from './components/Sports';
+import Science from './components/Science';
+import Technology from './components/Technology';
 import React from "react";
 import { StyleSheet, Text, View, AppRegistry } from "react-native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -23,7 +26,10 @@ export default function App() {
       <Stack.Navigator >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Form" component={Form} />
-        <Stack.Screen name="Politics" component={Politics} />
+        <Stack.Screen name="Health" component={Health} />
+        <Stack.Screen name="Sports" component={Sports} />
+        <Stack.Screen name="Science" component={Science} />
+        <Stack.Screen name="Technology" component={Technology} />
       </Stack.Navigator>
     </NavigationContainer>
 );

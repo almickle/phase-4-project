@@ -37,8 +37,8 @@ export default function Header( { navigation }) {
                   source={DenBoiz}/>
           <Login size={headerSize} handleClickLogin={handleClickLogin}/>
           </View>
-        <Navbar />
-        <Button title="I work" onPress={() => navigation.navigate('Politics')}></Button>
+        <Navbar navigation={navigation} />
+        {/* <Button title="I work" onPress={() => navigation.navigate('Health')}></Button> */}
         {/* <Markets /> */}
       </View>
     );

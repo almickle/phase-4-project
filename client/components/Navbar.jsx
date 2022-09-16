@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { ScrollView, Text, StyleSheet } from 'react-native';
 
 
-export default function Navbar() {
+
+export default function Navbar({ navigation}) {
 
   const [textColor, setTextColor] = useState("black")
 
@@ -11,14 +12,14 @@ export default function Navbar() {
   }
     return (
       <ScrollView horizontal={ true } style={{ margin: 4 }}>
-        <Text style={ styles.textStyle } onPress={changeColor}>Politics</Text>
-        <Text style={ styles.textStyle }>Finance</Text>
-        <Text style={ styles.textStyle }>Business</Text>
-        <Text style={ styles.textStyle }>Technology</Text>
-        <Text style={ styles.textStyle }>Sports</Text>
-        <Text style={ styles.textStyle }>Travel</Text>
+        <Text style={ styles.textStyle } onPress={() => navigation.navigate('Health')}>Health</Text>
+        <Text style={ styles.textStyle } onPress={() => navigation.navigate('Sports')} >Sports</Text>
+        <Text style={ styles.textStyle } onPress={() => navigation.navigate('Science')}>Science</Text>
+        <Text style={ styles.textStyle } onPress={() => navigation.navigate('Technology')}>Technology</Text>
+        {/* <Text style={ styles.textStyle }onPress={() => navigation.navigate('Health')}>Sports</Text> */}
+        {/* <Text style={ styles.textStyle }>Travel</Text>
         <Text style={ styles.textStyle }>Art</Text>
-        <Text style={ styles.textStyle }>Health</Text>
+        <Text style={ styles.textStyle }>Health</Text> */}
       </ScrollView>
     );
   }
